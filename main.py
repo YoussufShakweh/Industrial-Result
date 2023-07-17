@@ -3,10 +3,11 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 import selenium.common.exceptions as sel_ex
 
-# Enter Year And The Student ID
-year = input("Enter The Year: ")
-std_id = input("Enter Your Number: ")
+
 try:
+  # Enter Year And The Student ID
+  year = input("Enter The Year: ")
+  std_id = input("Enter Your Number: ")
   driver = webdriver.Chrome()
   url = f"http://secondary{year}.moed.gov.sy/industrial/index.php"
   driver.get(url)
