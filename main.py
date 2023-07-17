@@ -5,11 +5,10 @@ import selenium.common.exceptions as sel_ex
 
 
 try:
-  # Enter Year And The Student ID
-  year = input("Enter The Year: ")
+  # Enter The Student ID
   std_id = input("Enter Your Number: ")
   driver = webdriver.Chrome()
-  url = f"http://secondary{year}.moed.gov.sy/industrial/index.php"
+  url = f"https://moed.gov.sy/industrial/result.php"
   driver.get(url)
 
   # Create City List
