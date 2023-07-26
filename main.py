@@ -17,7 +17,7 @@ while True:
     driver.refresh()
 
 # Find Selection Webelement "Branch" and Select Industrial
-Select(driver.find_element(By.ID, "branch")).select_by_value('6')
+Select(driver.find_element(By.ID, "branch")).select_by_value("6")
 
 # Find Selection Webelement "Sub-Branch" and Select Computer Technology
 Select(driver.find_element(By.ID, "sub-branch")).select_by_value("p06")
@@ -26,9 +26,9 @@ Select(driver.find_element(By.ID, "sub-branch")).select_by_value("p06")
 Select(driver.find_element(By.ID, "city")).select_by_value("7")
 
 # Find Webelement "stdnum" and Fill It
-driver.find_element(by=By.ID, value="stdnum").send_keys(std_num)
+driver.find_element(By.ID, "stdnum").send_keys(std_num)
 
 # Find Webelement "Submit" and Click It
-driver.find_element(by=By.ID, value="submit").click()
+driver.find_element(By.ID, "submit").click()
 
 input("Press to close ...")
