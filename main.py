@@ -7,7 +7,7 @@ from selenium.common.exceptions import WebDriverException
 std_num = input("Enter Your Number: ")
 
 url = "http://moed.gov.sy/12th/index.php"
-driver = webdriver.Chrome()
+driver = webdriver.Edge()
 
 while True:
   try: 
@@ -16,30 +16,19 @@ while True:
   except WebDriverException:
     driver.refresh()
 
-# Select Branch
-branch = driver.find_element(by=By.ID, value="branch")
-select_branch = Select(branch)
-select_branch.select_by_value("6") # To Chose Industrial select 6
+# Find Selection Webelement "Branch" and Select Industrial
+Select(driver.find_element(By.ID, "branch")).select_by_value('6')
 
-# Select Sub - Branch
-pro = driver.find_element(by=By.ID, value="sub-branch")
-select_sub_branch = Select(pro)
-# Auto Select Computer Technology
-select_sub_branch.select_by_value("p06")
+# Find Selection Webelement "Sub-Branch" and Select Computer Technology
+Select(driver.find_element(By.ID, "sub-branch")).select_by_value("p06")
 
-# Create City List
-city = driver.find_element(by=By.ID, value="city")
-select_city = Select(city)
-# Auto Select Hama
-select_city.select_by_value("7")
+# Find Selection Webelement "City" and Select Hama
+Select(driver.find_element(By.ID, "city")).select_by_value("7")
 
-# Create Stdnum
-stdnum = driver.find_element(by=By.ID, value="stdnum")
-stdnum.send_keys(std_num)
+# Find Webelement "stdnum" and Fill It
+driver.find_element(by=By.ID, value="stdnum").send_keys(std_num)
 
-# Create Submit Button
-submit = driver.find_element(by=By.ID, value="submit")
-submit.click()
-
+# Find Webelement "Submit" and Click It
+driver.find_element(by=By.ID, value="submit").click()
 
 input("Press to close ...")
